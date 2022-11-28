@@ -1,0 +1,102 @@
+nav {
+  background-color: #fff;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 2px 2px 2px rgba(193, 180, 180, 0.61);
+
+}
+
+.logo-companyname {
+  display: flex;
+  align-items: center; 
+  cursor: pointer;
+}
+
+
+.navicon {
+  margin: 0 1vw 0 2vw;
+  width: 3vw;
+  height: 3vw;
+
+}
+.company-name{
+  font-size: 1.3rem;
+}
+
+.link-list {
+  display: flex;
+  width: 30vw;
+  justify-content: space-around;
+}
+
+
+#check {
+  display: none;
+}
+
+.checkbtn {
+  display: none;
+}
+
+
+.profile-div {
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+  padding-right: 2vw;
+}
+
+#profile-img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+}
+
+.profile-name {
+  font-size: 1.1rem;
+}
+
+.logo {
+  display: none;
+}
+
+
+@media (max-width: 875px) {
+
+  .profile-div,
+  .link-list {
+    display: none;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  .navicon {
+    margin: 0 2vw 0 4vw;
+    width: 8vw;
+    height: 8vw;
+  
+  }
+
+  .logo {
+    all: unset;
+    width: 25vw;
+    height: 8vw;
+    margin: 0 20px ;
+    margin-top: -7px;
+  }
+
+  .checkbtn {
+    display: flex;
+    font-size: 1.6rem;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+
+}
