@@ -1,0 +1,57 @@
+.home-page-main-div{
+    margin: 2vw;
+    background-color: #fff;
+}
+.home-page-first-div{
+    display: flex;
+}
+.home-page-main-img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.home-page-first-div-child2{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 6vw 5vw;
+}
+
+.home-page-first-div-child1{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 6vw 0vw 6vw 5vw;
+}
+
+.home-page-first-div-title{
+    font-size: 2.5rem;
+    padding-left: 6vw;
+    letter-spacing: 2px;
+    margin-bottom: 2vw;
+}
+
+.home-page-first-div-subtitle{
+    font-size: 1.5rem;
+    padding-left: 6vw;
+    margin-bottom: 4vw;
+}
+
+.home-page-btn-div{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8vw;
+    
+}
+
+.home-page-buy-btn , .home-page-sell-btn{
+    all: unset;
+    cursor: pointer;
+    width: 40%;
+    height: 200%;
+    font-size: 1.3rem;
+    text-align: center;
+   background-color: rgb(80, 162, 2);
+   border-radius: 10px;
+    
+}
