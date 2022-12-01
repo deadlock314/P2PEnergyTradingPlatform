@@ -1,14 +1,14 @@
 .footer-outerarea{
 
  padding: 0 10% 0 17%;
- background-color: #052933;
+ background-color: #08242c;
 
 }
 .footer-col{
     display: grid;
     grid-template-columns: 30% 30% 40%;
     line-height: 30px;
-     background-color: #052933;
+     background-color: #08242c;
     
 }
 .footer-row{
@@ -58,7 +58,7 @@
 }
 
 #cpright{
-    background-color: #273f4e;
+    background-color: #011c2f;
     text-align: center;
     padding: 10px;
     font-family: Helvetica, sans-serif;
