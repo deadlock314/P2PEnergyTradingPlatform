@@ -7,6 +7,9 @@ nav {
   box-shadow: 2px 2px 2px 2px rgba(193, 180, 180, 0.61);
 
 }
+nav a{
+  color: #000;
+}
 
 .logo-companyname {
   display: flex;

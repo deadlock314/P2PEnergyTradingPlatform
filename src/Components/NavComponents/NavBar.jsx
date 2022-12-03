@@ -24,10 +24,11 @@ export default function NavBar() {
           <FontAwesomeIcon icon={navicon} />
         </label>
 
-        <div className="logo-companyname">
+       <Link to="/"> <div className="logo-companyname">
           <img className="navicon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ceK4DRKMgME3VEXa-oi9IAQl8WiJkFsac3iIx0edOpU8T5RZKYKwTxSdpZrSo7LT_lA&usqp=CAU" />
           <p className="company-name">P2PEnergyTradingPlatform </p>
-        </div>
+        </div></Link>
+        
         <div className="nav-div1">
           <Link to="/signup" >Sign Up</Link>
         </div>
