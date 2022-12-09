@@ -23,24 +23,39 @@ const LogIn = () => {
 
     const loginResHandler = (res) => {
 
-        if (res.isUserLoggedIn && res.isCorrectPassword) {
+        if (res.loggedIn) {
             alert('user succesfully Logged-In')
             setLoading(true)
             setUser({ email: '', password: '' })
-            getDataFromAPI(`${RootUrl}/user/${res._id}`).then((userdata) => {
-                if (userdata.data) {
-                    // dispatch(changeUserAuth(true))
-                    // dispatch(setUserData(userdata.data)) 
-                    redirect(`/user/${userdata.data.userAccData._Id}`);
-                }
-            })
+            // getDataFromAPI(`${RootUrl}/user/${res._id}`).then((userdata) => {
+            //     if (userdata.data) {
+            //         // dispatch(changeUserAuth(true))
+            //         // dispatch(setUserData(userdata.data)) 
+            //         redirect(`/user/${userdata.data.userAccData._Id}`);
+            //     }
+            // })
         }
-        else if (!res.isCorrectPassword && !res.isCorrectUser)
+        else 
             setLoggedInMes('Enter correct email and password');
-        else if (!res.isUserLoggedIn && !res.isCorrectPassword)
-            setLoggedInMes('Please enter correct password')
-        else
-            setLoggedInMes('Something went wrong try again');
+
+        // if (res.isUserLoggedIn && res.isCorrectPassword) {
+        //     alert('user succesfully Logged-In')
+        //     setLoading(true)
+        //     setUser({ email: '', password: '' })
+        //     getDataFromAPI(`${RootUrl}/user/${res._id}`).then((userdata) => {
+        //         if (userdata.data) {
+        //             // dispatch(changeUserAuth(true))
+        //             // dispatch(setUserData(userdata.data)) 
+        //             redirect(`/user/${userdata.data.userAccData._Id}`);
+        //         }
+        //     })
+        // }
+        // else if (!res.isCorrectPassword && !res.isCorrectUser)
+        //     setLoggedInMes('Enter correct email and password');
+        // else if (!res.isUserLoggedIn && !res.isCorrectPassword)
+        //     setLoggedInMes('Please enter correct password')
+        // else
+        //     setLoggedInMes('Something went wrong try again');
 
     }
 
@@ -67,7 +82,7 @@ const LogIn = () => {
 
                         <div className='auth-wrapper'>
                             <form className="form">
-
+                            <p className='form-heading' >LogIn</p>
                                 <label htmlFor="email" >Email : </label>
                                 <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} />
 

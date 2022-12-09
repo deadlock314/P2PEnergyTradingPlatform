@@ -3,10 +3,11 @@ import RootUrl from '../../Assets/RootURL';
 import { getDataFromAPI } from '../../HelperFun/APImethods';
 import './UserList.css';
 import UserStruct from './UserStruct';
-
+import {Packages} from '../../Assets/dummydata';
 
 //static data
-import DataArray from '../../StaticInfo';
+// import DataArray from '../../StaticInfo';
+
 import { useParams } from 'react-router-dom';
 
 
@@ -14,7 +15,7 @@ import { useParams } from 'react-router-dom';
 const UserList = () => {
 
     const [loading, setLoading] = useState(true);
-    const [userList, setUserList] = useState(DataArray || []);
+    const [userList, setUserList] = useState(Packages || []);
 
     const userType = useParams().usertype;
 

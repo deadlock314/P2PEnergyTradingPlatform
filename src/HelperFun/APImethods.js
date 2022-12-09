@@ -1,3 +1,4 @@
+import axios from "axios";
 
 const getDataFromAPI=async(url)=>{
   try{
@@ -13,17 +14,12 @@ const getDataFromAPI=async(url)=>{
 }
 
 const postDataToAPI=async(url,data)=>{
+
+  console.log(url , data);
  
   try{
-      const rawResponse=await fetch(url,{
-        method: post,
-        withCredentials: true,
-        body: JSON.stringify(data)
-      });
-
-      const jsonResponse = rawResponse.json();
-     
-      return jsonResponse.data;
+      const rawResponse=await axios.post(url,data,{ withCredentials: true})
+      return rawResponse.data;
   }
   catch(err){
     console.log(err);
