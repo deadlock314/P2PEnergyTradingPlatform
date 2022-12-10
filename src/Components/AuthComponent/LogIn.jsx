@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import './FormStyles.css';
-// import {changeUserAuth,setUserData} from '../../ReduxCode/Reducers';
+import {changeUserAuth,setUserData} from '../../ReduxCode/Reducers';
 import RootUrl from '../../Assets/RootURL';
 import { getDataFromAPI, postDataToAPI } from '../../HelperFun/APImethods';
 
@@ -13,7 +13,10 @@ const LogIn = () => {
     const [loading, setLoading] = useState(false);
     const [loggedInMes, setLoggedInMes] = useState('');
 
-    // const dispatch=useDispatch();
+    const reduxState=useSelector((state)=>state);
+    console.log(reduxState);
+
+    const dispatch=useDispatch();
 
     let [user, setUser] = useState({ email: '', password: '' });
     const changeHandler = e => {
@@ -27,15 +30,15 @@ const LogIn = () => {
             alert('user succesfully Logged-In')
             setLoading(true)
             setUser({ email: '', password: '' })
-            // getDataFromAPI(`${RootUrl}/user/${res._id}`).then((userdata) => {
-            //     if (userdata.data) {
-            //         // dispatch(changeUserAuth(true))
-            //         // dispatch(setUserData(userdata.data)) 
-            //         redirect(`/user/${userdata.data.userAccData._Id}`);
-            //     }
-            // })
+            getDataFromAPI(`${RootUrl}/user/${user.email}`).then((userdata) => {
+                if (userdata.data) {
+                    dispatch(changeUserAuth(true))
+                    dispatch(setUserData(userdata.data)) 
+                    redirect(`/user/${userdata.data.userAccData._Id}`);
+                }
+            })
         }
-        else 
+        else
             setLoggedInMes('Enter correct email and password');
 
         // if (res.isUserLoggedIn && res.isCorrectPassword) {
@@ -82,12 +85,16 @@ const LogIn = () => {
 
                         <div className='auth-wrapper'>
                             <form className="form">
-                            <p className='form-heading' >LogIn</p>
-                                <label htmlFor="email" >Email : </label>
-                                <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} />
 
-                                <label htmlFor="password" > Password : </label>
-                                <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} />
+                                <p className='form-heading' >LogIn</p>
+
+                                <label htmlFor="email" >Email :
+                                    <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} />
+                                </label>
+
+                                <label htmlFor="password" > Password :
+                                    <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} />
+                                </label>
 
                                 <Link id='fpass' to='/forgotpassword'>Forgot your password</Link>
                                 <button type='submit' onClick={clickHandler}>LogIn</button>

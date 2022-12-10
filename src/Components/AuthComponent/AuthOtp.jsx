@@ -11,19 +11,18 @@ function AuthOtp() {
     const redirect = useNavigate()
     const [localOtp, setLocalOtp] = useState('');
     const [authMes, setAuthMes] = useState('');
+    const [loading,setLoading] =useState(false);
 
     const changeHandler = (e) => setLocalOtp(e.target.value);
     
 
     const authResHandler = (res) => {
         if (res.isUserAuth && res.isCorrectPassword) {
-            alert('user succesfully signed up');
-            redirect("/LogIn");
+            alert('user succesfully verified account');
+            redirect("/");
         }
         else if (!res.isCorrectPassword && !res.isCorrectUser)
-            setAuthMes('Enter correct otp and password');
-        else if (!res.isUserAuth && !res.isCorrectPassword)
-            setAuthMes('please enter correct password')
+            setAuthMes('Enter correct otp');
         else
             setAuthMes('something went wrong try again');
     }
@@ -48,8 +47,8 @@ function AuthOtp() {
                 <img className="img-form" src="https://www.vassallogroupmalta.com/wp-content/uploads/2017/12/Powerezi-1200x750.jpg" />
                 <div className='auth-wrapper'>
                     <form className="form">
-                        <label htmlFor='localOtp' id='auth-otp-label'>Email verification OTP </label>
-                        <input name='otp' type='text' value={localOtp} onChange={changeHandler} />
+                        <h3 htmlFor='localOtp' id='auth-otp-label'>Email verification OTP </h3>
+                        <label><input className='otp' name='otp' type='text' value={localOtp} onChange={changeHandler} /></label>
                         <button type="submit" onClick={VerifySignup} >Verify User</button>
                         <p id="warn-message"> {authMes}</p>
                         <p id='auth-otp-para'>We just send your OTP via your <br />email
