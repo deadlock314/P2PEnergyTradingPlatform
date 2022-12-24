@@ -20,27 +20,6 @@ export const UserAuthSlice=createSlice({
     }
 })
 
-export const PrevCartDataSlice=createSlice({
-    name:'cartData',
-    initialState: getStorage("previousCartData") ||{
-        prevCartData:[],
-        totalPrice:'0',
-        countObj:{}
-    },
-    reducers:{
-        updateCartData:(state,action) => { return {...current(state), prevCartData:[...current(state.prevCartData) ,action.payload] }},
-        
-        updatePrice:(state,action)=>{ 
-            return {    ...current(state) , totalPrice: action.payload.totalPrice ,
-             countObj:{ ...current(state.countObj) ,[action.payload.countObj.id]:action.payload.countObj.count} 
-            } 
-        },
-        removeCartData:(state,action) => {
-            return  { ...current(state) ,prevCartData:current(state).prevCartData.filter(data => data._id !== action.payload )}
-         }
-    }
-
-})
 
 export const {changeUserAuth,setUserData}=UserAuthSlice.actions;
-export const {updateCartData,updatePrice,removeCartData}=PrevCartDataSlice.actions;
+

@@ -1,6 +1,5 @@
-import { UserAuthSlice,PrevCartDataSlice} from './Reducers';
+import { UserAuthSlice} from './Reducers';
 
 
 const UserAuthReducer=UserAuthSlice.reducer;
-const CartDataReducer=PrevCartDataSlice.reducer;
-export  {UserAuthReducer,CartDataReducer} ;
+export  {UserAuthReducer} ;
