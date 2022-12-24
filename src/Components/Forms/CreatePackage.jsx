@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './FormStyles.css';
+// import './FormStyles.css';
 import RootUrl from '../../Assets/RootURL';
 import { getDataFromAPI, postDataToAPI } from '../../HelperFun/APImethods';
 import { useDispatch } from 'react-redux';
 import {changeUserAuth,setUserData} from '../../ReduxCode/Reducers';
 
-
-
-function SignUp() {
+function CreatePackage() {
+    
     const redirect = useNavigate();
     const [user, setUser] = useState({ name: '', email: '', password: '' });
     const [signedUpMes, setsignedUpMes] = useState('');
@@ -65,10 +64,9 @@ function SignUp() {
     return (
 
         <div className="img-form-main">
-        <img className="img-form" src="https://www.vassallogroupmalta.com/wp-content/uploads/2017/12/Powerezi-1200x750.jpg" />
         <div className='auth-wrapper'>
             <form className="form">
-            <p className='form-heading' >Register</p>
+            <p className='form-heading' >Package</p>
                 <label htmlFor="name" >Name <input type='text' name='name' id='name' value={user.name} onChange={changeHandler} /></label>
                 
                 <label htmlFor="email" >Email <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} /> </label>
@@ -76,9 +74,9 @@ function SignUp() {
 
                 <label htmlFor="password" > Password <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} /> </label>
                 
-                <button type='submit' onClick={clickHandler}>Sign Up</button>
+                <button type='submit' onClick={clickHandler}>Create Package</button>
                 <p id="warn-message"> {signedUpMes}</p>
-                <p>Already have an account? <Link className='auth-link' to='/login'> LogIn</Link> </p>
+               
             </form>
         </div>
         </div>
@@ -86,4 +84,6 @@ function SignUp() {
     );
 }
 
-export default SignUp;
+
+
+export default CreatePackage;

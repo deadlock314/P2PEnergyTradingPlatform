@@ -11,10 +11,10 @@ function HomePage() {
             <div className="home-page-first-div">
                 <div className="home-page-first-div-child1">
                     <p className="home-page-first-div-title" >Peer To Peer Energy Trading Platform using Smart contarcts</p>
-                    <p className="home-page-first-div-subtitle"> Investing and trading made simple, affordable and accessible for you. </p>
+                    <p className="home-page-first-div-subtitle"> Utilizing and trading made simple, affordable and accessible for you and your peers and also save Environment. </p>
                     <div className="home-page-btn-div">
-                        <button className="home-page-buy-btn" onClick={()=> redirect("/userlist/Buyer") } >Buy</button>
-                        <button className="home-page-sell-btn" onClick={()=> redirect("/userlist/Seller") } >Sell</button>
+                        <button className="home-page-buy-btn" onClick={()=> redirect("/userlist/Seller") } >Buy</button>
+                        <button className="home-page-sell-btn" onClick={()=> redirect("/createpackage") } >Sell</button>
                     </div>
 
                 </div>

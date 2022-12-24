@@ -9,6 +9,8 @@ import AuthOtp from './Components/AuthComponent/AuthOtp';
 import "./App.css";
 import UserList from './Components/UserListComponents/UserList';
 import ProfileMain from './Components/ProfileComponents/ProfileMain';
+import PublicProfile from './Components/ProfileComponents/PublicProfile';
+import CreatePackage from './Components/Forms/CreatePackage';
 
 
 const App = () => {
@@ -27,7 +29,10 @@ const App = () => {
       <Route path="/authotp" element={<AuthOtp/>} />
       <Route path="/login" element={<LogIn/>} />
 
-      <Route path='/user/:userId' element={<ProfileMain/>} />
+      <Route path='/private/user/:userId' element={<ProfileMain/>} />
+      <Route path='/public/user/:userId' element={<PublicProfile/>} />
+
+      <Route path="/createpackage" element={<CreatePackage/>} />
 
      </Routes>
       <Footer/>

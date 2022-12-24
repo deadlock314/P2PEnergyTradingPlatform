@@ -34,8 +34,8 @@ const UserList = () => {
         <>
             {
                 (userList.length > 0 && !loading) ?
-                    <div>
-                        <p>Nearby {userType}</p>
+                    <div className='main-userlist'>
+                        <p className='userlist-div-title'>Nearby {userType}</p>
 
                         <div className="userlist-div" >
                             {

@@ -27,39 +27,81 @@ const Users = [{
   const Packages =[
     {
         
-        PackageImgLink:"https://th.bing.com/th/id/OIP.9sHObtsN10e8L6TQjrURhQHaD0?pid=ImgDet&rs=1",ownerId:"skskj.a,",
-        unitPrice:3,
-        duration:28,
-        dailyLimit:20 ,
-        price:0,
-        active:true,
+      "active": true,
+      "ownerId": {
+          "isNode": false,
+          "name": "dd12d",
+          "email": "akll@gmail.com",
+          "landmark": "gec raipur",
+          "pincode": "12345",
+          "city": "Raipur",
+          "state": "chhattisgrah",
+          "country": "india",
+          "__v": 0
+      },
+      "price": 10,
+      "duration": 30,
+      "dailyLimit": 300
     
     },
     {
-        PackageImgLink:"https://th.bing.com/th/id/OIP.9sHObtsN10e8L6TQjrURhQHaD0?pid=ImgDet&rs=1",ownerId:"sksfsg.a,",
-        unitPrice:3,
-        duration:28,
-        dailyLimit:20 ,
-        price:0,
-        active:true,
+        
+      "active": true,
+      "ownerId": {
+          "isNode": false,
+          "name": "dd12d",
+          "email": "akll@gmail.com",
+          "landmark": "gec raipur",
+          "pincode": "12345",
+          "city": "Raipur",
+          "state": "chhattisgrah",
+          "country": "india",
+          "__v": 0
+      },
+      "price": 10,
+      "duration": 30,
+      "dailyLimit": 300
     
-    },{
-        PackageImgLink:"https://th.bing.com/th/id/OIP.9sHObtsN10e8L6TQjrURhQHaD0?pid=ImgDet&rs=1",ownerId:"sksss.a,",
-        unitPrice:3,
-        duration:28,
-        dailyLimit:20 ,
-        price:0,
-        active:true,
+    },
+    {
+        
+      "active": true,
+      "ownerId": {
+          "isNode": false,
+          "name": "dd12d",
+          "email": "akll@gmail.com",
+          "landmark": "gec raipur",
+          "pincode": "12345",
+          "city": "Raipur",
+          "state": "chhattisgrah",
+          "country": "india",
+          "__v": 0
+      },
+      "price": 10,
+      "duration": 30,
+      "dailyLimit": 300
     
-    },{
-        PackageImgLink:"https://th.bing.com/th/id/OIP.9sHObtsN10e8L6TQjrURhQHaD0?pid=ImgDet&rs=1",ownerId:"sksssaj.a,",
-        unitPrice:3,
-        duration:28,
-        dailyLimit:20 ,
-        price:0,
-        active:true,
+    },
+    {
+        
+      "active": true,
+      "ownerId": {
+          "isNode": false,
+          "name": "dd12d",
+          "email": "akll@gmail.com",
+          "landmark": "gec raipur",
+          "pincode": "12345",
+          "city": "Raipur",
+          "state": "chhattisgrah",
+          "country": "india",
+          "__v": 0
+      },
+      "price": 10,
+      "duration": 30,
+      "dailyLimit": 300
     
-    }
+    },
+    
   ]
 
 export {Users , Packages};

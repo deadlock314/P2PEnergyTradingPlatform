@@ -17,11 +17,11 @@ function AuthOtp() {
     
 
     const authResHandler = (res) => {
-        if (res.isUserAuth && res.isCorrectPassword) {
+        if (res.emailverified ) {
             alert('user succesfully verified account');
             redirect("/");
         }
-        else if (!res.isCorrectPassword && !res.isCorrectUser)
+        else if (!res.emailverified)
             setAuthMes('Enter correct otp');
         else
             setAuthMes('something went wrong try again');
@@ -34,7 +34,7 @@ function AuthOtp() {
 
     const VerifySignup = async (e) => {
         e.preventDefault();
-         postDataToAPI(`${RootUrl}/signup/alphakey`, { ...urlData.state, otp: parseInt(localOtp) })
+         postDataToAPI(`${RootUrl}/verifymail`, {  otp: localOtp })
          .then((res)=>authResHandler(res)).catch ((err)=> {
             console.log(err);
             setAuthMes('something went wrong try again');

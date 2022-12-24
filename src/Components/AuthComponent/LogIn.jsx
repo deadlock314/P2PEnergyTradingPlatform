@@ -28,13 +28,18 @@ const LogIn = () => {
 
         if (res.loggedIn) {
             alert('user succesfully Logged-In')
-            setLoading(true)
+            setLoading(true);
             setUser({ email: '', password: '' })
             getDataFromAPI(`${RootUrl}/user/${user.email}`).then((userdata) => {
+                console.log(userdata);
                 if (userdata.data) {
                     dispatch(changeUserAuth(true))
                     dispatch(setUserData(userdata.data)) 
-                    redirect(`/user/${userdata.data.userAccData._Id}`);
+                    redirect(`/private/user/${userdata.data.userAccData._Id}`);
+                }
+                else{
+                    setLoggedInMes('Something went wrong try again');
+                    
                 }
             })
         }

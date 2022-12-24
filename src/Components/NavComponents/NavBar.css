@@ -25,7 +25,8 @@ nav a{
 
 }
 .company-name{
-  font-size: 1.35vw;
+  font-size: 1.45vw;
+  font-family: 'Alegreya', serif;
 }
 
 #check {
@@ -37,12 +38,21 @@ nav a{
 }
 
 .nav-div1{
-  font-size: 1.3vw;
+  font-size: 1.35vw;
   margin-left: 60vw;
+  font-family:'Segoe UI', Tahoma, Verdana, sans-serif, Arial, sans-serif;
 }
 .nav-div2{
   margin-left: 5vw;
-  font-size: 1.3vw;
+  font-size: 1.35vw;
+  font-family:'Segoe UI', Tahoma, Verdana, sans-serif, Arial, sans-serif;
+}
+.nav-div3{
+  margin-left: 70%;
+}
+.nav-div3 a{
+  font-size: 2rem;
+   color: rgb(36, 181, 26);
 }
 
 .nav-div2 a , .nav-div1 a{
