@@ -1,4 +1,4 @@
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const UserStruct = ({ props }) => {
@@ -6,7 +6,7 @@ console.log(props);
 
 const redirect = useNavigate();
 
-const imgLink="https://avatars.githubusercontent.com/u/1777722?s=200&v=4";
+const imgLink="https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png";
 
     return (
         <>
@@ -15,24 +15,27 @@ const imgLink="https://avatars.githubusercontent.com/u/1777722?s=200&v=4";
             <div  className="userlist-struct-div1">
                 <div className="userlist-div-name-img" >
                     <img className="userlist-struct-profileimg" src={imgLink} onClick={()=>redirect(`/public/user/${props.ownerId.email}`)}/>
-                    <div >
-                      <p >Name : {props.ownerId.name}</p>
+                    <div  >
+                      <p className="userlist-struct-owner-name" > {props.ownerId.name}</p>
                      <p> {props.ownerId.email}</p>
                     </div>
                 </div>
-                <div>
+                <div className="userlist-div-address">
                 <p> 
                    { `${props.ownerId.country} ${ props.ownerId.state} ${props.ownerId.city}
-                    ${props.ownerId.pincode} ${props.ownerId.landmark}`}
+                    ${props.ownerId.pincode}`}
                 </p>
+                <p> {props.ownerId.landmark}</p>
             
                 </div>
-                <div>
+                <div className="userlist-div-btn">
                
+                <div>
                 <p>Duration :  {props.duration} days DailyLimit : {props.dailyLimit}</p>
                 <p>Price : {props.price} Rs</p>
-            
                 </div>
+              
+                    <button className="purchase-btn">Purchase</button></div>
             </div>
             
                 <div className="userlist-struct-div2">

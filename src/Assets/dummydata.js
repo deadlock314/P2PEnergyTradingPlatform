@@ -2,8 +2,8 @@ const Users = [{
     "_id": 
        "638d8e480cabf5a39b531bbf",
     "InfraImgLink":"https://th.bing.com/th/id/OIP.9sHObtsN10e8L6TQjrURhQHaD0?pid=ImgDet&rs=1",
-    "name": "dd12d",
-    "email": "akll@gmail.com",
+    "name": "Ashutosh Duve",
+    "email": "ashudubey2343@gmail.com",
     "password": "$2b$10$YJb3fQppzWIE6bNmY4Ieg.kJPlFL5kEiPn.V1FEosjJ0iiAWNBetO",
     "verifiedMail": false,
     "verifiedContact": false,
@@ -30,9 +30,9 @@ const Users = [{
       "active": true,
       "ownerId": {
           "isNode": false,
-          "name": "dd12d",
-          "email": "akll@gmail.com",
-          "landmark": "gec raipur",
+          "name": "Ashutosh Duev",
+          "email": "akllDuve2552@gmail.com",
+          "landmark": "government engineering college raipur",
           "pincode": "12345",
           "city": "Raipur",
           "state": "chhattisgrah",
@@ -49,7 +49,7 @@ const Users = [{
       "active": true,
       "ownerId": {
           "isNode": false,
-          "name": "dd12d",
+          "name": "dsddf dd12d",
           "email": "akll@gmail.com",
           "landmark": "gec raipur",
           "pincode": "12345",

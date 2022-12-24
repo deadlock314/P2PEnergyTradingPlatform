@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-// import './FormStyles.css';
+import { useNavigate } from 'react-router-dom';
 import RootUrl from '../../Assets/RootURL';
 import { getDataFromAPI, postDataToAPI } from '../../HelperFun/APImethods';
 import { useDispatch } from 'react-redux';
@@ -9,7 +8,7 @@ import {changeUserAuth,setUserData} from '../../ReduxCode/Reducers';
 function CreatePackage() {
     
     const redirect = useNavigate();
-    const [user, setUser] = useState({ name: '', email: '', password: '' });
+    const [user, setUser] = useState({  });
     const [signedUpMes, setsignedUpMes] = useState('');
     
     const changeHandler = (e) => {

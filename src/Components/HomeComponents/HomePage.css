@@ -1,5 +1,6 @@
 .home-page-main-div{
-    margin: 2vw;
+    margin: 2vw ;
+    margin-bottom: 0;
     background-color: #fff;
 }
 .home-page-first-div{
@@ -53,5 +54,6 @@
     text-align: center;
    background-color: rgb(80, 162, 2);
    border-radius: 10px;
+   color:#fff;
     
 }

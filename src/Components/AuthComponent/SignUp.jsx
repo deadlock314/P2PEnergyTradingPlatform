@@ -31,7 +31,7 @@ function SignUp() {
                 if (userdata.data) {
                     dispatch(changeUserAuth(true))
                     dispatch(setUserData(userdata.data)) 
-                    redirect(`/private/user/${userdata.data.userAccData._Id}`);
+                    redirect(`/private/user/${userdata.data.email}`);
                 }
                 else{
                     setsignedUpMes('Something went wrong try again');
