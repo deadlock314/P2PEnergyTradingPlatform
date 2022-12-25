@@ -3,81 +3,105 @@ import { useNavigate } from 'react-router-dom';
 import RootUrl from '../../Assets/RootURL';
 import { getDataFromAPI, postDataToAPI } from '../../HelperFun/APImethods';
 import { useDispatch } from 'react-redux';
-import {changeUserAuth,setUserData} from '../../ReduxCode/Reducers';
+import { changeUserAuth, setUserData } from '../../ReduxCode/Reducers';
+import './CreatePackage.css';
 
 function CreatePackage() {
-    
+
     const redirect = useNavigate();
-    const [user, setUser] = useState({  });
-    const [signedUpMes, setsignedUpMes] = useState('');
-    
+    const dispatch = useDispatch();
+
+
+    const [packageData, setPackageData] = useState({ packType: '', duration: 0, price: 0, dailyLimit: 0 });
+    const [packageResMes, setPackageResMes] = useState('');
+    const [isPackageValid, setIsPackageValid] = useState(false);
+
     const changeHandler = (e) => {
         const { name, value } = e.target;
-        setUser((user) => ({ ...user, [name]: value }));
+        setPackageData((user) => ({ ...user, [name]: value }));
     };
-    const dispatch=useDispatch();
 
 
 
-    const signupResHandler = (res) => {
-       
-        if (res.signedUp){
-            setsignedUpMes('User succesfully signed up');
+
+    const packageDataValidator = (res) => {
+        return true;
+
+        if (res.signedUp) {
+            setPackageResMes('User succesfully signed up');
             alert("User succesfully signed up");
-            getDataFromAPI(`${RootUrl}/user/${user.email}`).then((userdata) => {
+            getDataFromAPI(`${RootUrl}/user/${packageData.email}`).then((userdata) => {
                 console.log(userdata);
                 if (userdata.data) {
                     dispatch(changeUserAuth(true))
-                    dispatch(setUserData(userdata.data)) 
+                    dispatch(setPackageDataData(userdata.data))
                     redirect(`/private/user/${userdata.data.userAccData._Id}`);
                 }
-                else{
-                    setsignedUpMes('Something went wrong try again');
-                    
+                else {
+                    setPackageResMes('Something went wrong try again');
+
                 }
             })
         }
         else
-            setsignedUpMes('something went wrong try again');
+            setPackageResMes('something went wrong try again');
 
         // if (res.isDuplicateUser)
-        //     setsignedUpMes('User already exist in database');
+        //     setPackageResMes('User already exist in database');
         // else if (res.isEmailSent)
         //     redirect('/signup/alphakey', { state: { ...user } })
         // else if (!res.isEmailSent)
-        //     setsignedUpMes('please enter correct email id')
+        //     setPackageResMes('please enter correct email id')
         // else
-        //     setsignedUpMes('something went wrong try again');
+        //     setPackageResMes('something went wrong try again');
     }
 
 
     const clickHandler = async (e) => {
         e.preventDefault();
-        postDataToAPI(`${RootUrl}/signup`, user)
-        .then((res) => signupResHandler(res)).catch ((err)=> {
-           console.log(err);
-           setsignedUpMes('something went wrong try again');
-       });
+        (isPackageValid) ?
+            postDataToAPI(`${RootUrl}/addpackage`, user)
+                .then(() => {
+                    setPackageResMes("package added successfully");
+                    redirect("/");
+                }).catch((err) => {
+                    console.log(err);
+                    setPackageResMes('something went wrong try again');
+                }) : (1 == 1)
     }
+
 
     return (
 
-        <div className="img-form-main">
-        <div className='auth-wrapper'>
-            <form className="form">
-            <p className='form-heading' >Package</p>
-                <label htmlFor="name" >Name <input type='text' name='name' id='name' value={user.name} onChange={changeHandler} /></label>
-                
-                <label htmlFor="email" >Email <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} /> </label>
-                
 
-                <label htmlFor="password" > Password <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} /> </label>
+        <div className='create-package-form-div'>
+            <form className="create-package-form">
+                <p className='form-heading' >Package Details</p>
+
+                <label className="create-package-form-label" htmlFor="packageType" > Package Type : </label>
+
+                <select id="packageType">
+                <option value="">Select Package Type</option>
+                    <option value="Hour">Hour</option>
+                    <option value="Day">Day</option>
+                    <option value="Month">Month</option>
+                    <option value="Flexiable">Flexiable</option>
+                </select>
+
+                <label className="create-package-form-label" htmlFor="duration" >Duration :</label>
+                <input className="create-package-form-input" type="number" name="duration" id='duration' value={packageData.duration} onChange={changeHandler} />
                 
-                <button type='submit' onClick={clickHandler}>Create Package</button>
-                <p id="warn-message"> {signedUpMes}</p>
-               
+                <label className="create-package-form-label" htmlFor="dailyLimit" > Daily Limit : </label>
+                <input className="create-package-form-input" type='number' name="dailyLimit" id='dailylimit' value={packageData.dailyLimit} onChange={changeHandler} />
+
+                <label className="create-package-form-label" htmlFor="price" > Price :</label>
+                <input className="create-package-form-input" type='number' name="price" id='price' value={packageData.price} onChange={changeHandler} />
+                
+                <button className="create-package-form-btn" type='submit' onClick={clickHandler}>Create Package</button>
+
+                <p id={(isPackageValid) ? "warn-message" : "success-message"}> {packageResMes}</p>
+
             </form>
-        </div>
         </div>
 
     );
