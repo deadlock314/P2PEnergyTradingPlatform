@@ -48,7 +48,7 @@ function AuthOtp() {
                 <div className='auth-wrapper'>
                     <form className="form">
                         <h3 htmlFor='localOtp' id='auth-otp-label'>Email verification OTP </h3>
-                        <label><input className='otp' name='otp' type='text' value={localOtp} onChange={changeHandler} /></label>
+                        <label className="auth-form-label"><input  className='auth-form-input otp ' name='otp' type='text' value={localOtp} onChange={changeHandler} /></label>
                         <button type="submit" onClick={VerifySignup} >Verify User</button>
                         <p id="warn-message"> {authMes}</p>
                         <p id='auth-otp-para'>We just send your OTP via your <br />email

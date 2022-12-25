@@ -48,8 +48,8 @@
 .home-page-buy-btn , .home-page-sell-btn{
     all: unset;
     cursor: pointer;
-    width: 40%;
-    height: 200%;
+    width: 37%;
+    height: 170%;
     font-size: 1.3rem;
     text-align: center;
    background-color: rgb(80, 162, 2);

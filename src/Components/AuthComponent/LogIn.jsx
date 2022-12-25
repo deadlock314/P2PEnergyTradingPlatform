@@ -93,12 +93,12 @@ const LogIn = () => {
 
                                 <p className='form-heading' >LogIn</p>
 
-                                <label htmlFor="email" >Email :
-                                    <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} />
+                                <label className="auth-form-label" htmlFor="email" >Email :
+                                    <input className="auth-form-input" type="email" name="email" id='email' value={user.email} onChange={changeHandler} />
                                 </label>
 
-                                <label htmlFor="password" > Password :
-                                    <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} />
+                                <label className="auth-form-label" htmlFor="password" > Password :
+                                    <input className="auth-form-input" type='password' name="password" id='password' value={user.password} onChange={changeHandler} />
                                 </label>
 
                                 <Link id='fpass' to='/forgotpassword'>Forgot your password</Link>

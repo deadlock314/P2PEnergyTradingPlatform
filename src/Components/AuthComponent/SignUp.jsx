@@ -69,16 +69,16 @@ function SignUp() {
         <div className='auth-wrapper'>
             <form className="form">
             <p className='form-heading' >Register</p>
-                <label htmlFor="name" >Name <input type='text' name='name' id='name' value={user.name} onChange={changeHandler} /></label>
+                <label className="auth-form-label" htmlFor="name" >Name <input className="auth-form-input" type='text' name='name' id='name' value={user.name} onChange={changeHandler} /></label>
                 
-                <label htmlFor="email" >Email <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} /> </label>
+                <label className="auth-form-label" htmlFor="email" >Email <input className="auth-form-input" type="email" name="email" id='email' value={user.email} onChange={changeHandler} /> </label>
                 
 
-                <label htmlFor="password" > Password <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} /> </label>
+                <label className="auth-form-label" htmlFor="password" > Password <input className="auth-form-input" type='password' name="password" id='password' value={user.password} onChange={changeHandler} /> </label>
                 
                 <button type='submit' onClick={clickHandler}>Sign Up</button>
                 <p id="warn-message"> {signedUpMes}</p>
-                <p>Already have an account? <Link className='auth-link' to='/login'> LogIn</Link> </p>
+                <p >Already have an account? <Link className='auth-link' to='/login'> LogIn</Link> </p>
             </form>
         </div>
         </div>
