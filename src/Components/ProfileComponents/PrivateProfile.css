@@ -1,7 +1,9 @@
 .profile-main-div{
     display: flex;
-    padding: 10% 20% 30% 20%;
+    margin: 4% 8%;
     justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 3px 3px 3px rgba(75, 70, 70, 0.321);
 }
 
 .profile-btn{

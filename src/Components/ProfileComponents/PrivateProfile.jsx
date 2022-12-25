@@ -4,9 +4,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import RootUrl from '../../Assets/RootURL';
 import { postDataToAPI } from '../../HelperFun/APImethods';
 import { changeUserAuth } from '../../ReduxCode/Reducers';
-import './ProfileMain.css';
+import './PrivateProfile.css';
 
-export default function ProfileMain() {
+export default function PrivateProfile() {
   const redirect = useNavigate();
   const dispatch = useDispatch();
 
@@ -33,12 +33,15 @@ export default function ProfileMain() {
       .then(res => {
         console.log(res)
       })
-  }
+  };
+
+  const imgLink="https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png";
 
 
   return (
     <div className='profile-main-div'>
-      <div>ProfileMain</div>
+      <img src={imgLink}/>
+      <div>PrivateProfile</div>
       <button className='profile-btn' onClick={SendOTP} >Verify Mail</button>
       <a className='profile-btn' href="https://metamask.io/" >Create Wallet</a>
       <button className='profile-btn' onClick={ConnetWallet} >Connect Wallet</button>
