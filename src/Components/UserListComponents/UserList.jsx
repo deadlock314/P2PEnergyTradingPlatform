@@ -9,6 +9,7 @@ import {Packages} from '../../Assets/dummydata';
 // import DataArray from '../../StaticInfo';
 
 import { useParams } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 
 
@@ -32,22 +33,24 @@ const UserList = () => {
 
     return (
         <>
-            {
-                (userList.length > 0 && !loading) ?
-                    <div className='main-userlist'>
-                        <p className='userlist-div-title'>Nearby {userType}</p>
+        <div className='main-packagelist-div'>
+            <div className="searchbar-bg-div">
 
-                        <div className="userlist-div" >
+            <div className='packagelist-div-title'>
+                <p>Nearby {userType}</p>
+            </div>
+                        
+                        <div className="main-search-div"><SearchBar/> </div>
+            </div>
+            { (userList.length > 0 && !loading) ?
+                        <div className="packagelist-div" >
                             {
                                 userList.map((userData) => <UserStruct key={userData._id} props={userData} />)
                             }
                         </div>
-
-
-
-                    </div> : <></>
+                    : <></>
             }
-
+         </div>
         </>
     );
 }

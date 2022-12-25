@@ -11,16 +11,16 @@ const imgLink="https://letstalkscience.ca/sites/default/files/2020-12/solar_powe
     return (
         <>
 
-            <div className="userlist-struct-main-div" >
-            <div  className="userlist-struct-div1">
-                <div className="userlist-div-name-img" >
-                    <img className="userlist-struct-profileimg" src={imgLink} onClick={()=>redirect(`/public/user/${props.ownerId.email}`)}/>
+            <div className="packagelist-struct-main-div" >
+            <div  className="packagelist-struct-div1">
+                <div className="packagelist-div-name-img" >
+                    <img className="packagelist-struct-profileimg" src={imgLink} onClick={()=>redirect(`/public/user/${props.ownerId.email}`)}/>
                     <div  >
-                      <p className="userlist-struct-owner-name" > {props.ownerId.name}</p>
+                      <p className="packagelist-struct-owner-name" > {props.ownerId.name}</p>
                      <p> {props.ownerId.email}</p>
                     </div>
                 </div>
-                <div className="userlist-div-address">
+                <div className="packagelist-div-address">
                 <p> 
                    { `${props.ownerId.country} ${ props.ownerId.state} ${props.ownerId.city}
                     ${props.ownerId.pincode}`}
@@ -28,7 +28,7 @@ const imgLink="https://letstalkscience.ca/sites/default/files/2020-12/solar_powe
                 <p> {props.ownerId.landmark}</p>
             
                 </div>
-                <div className="userlist-div-btn">
+                <div className="packagelist-div-btn">
                
                 <div>
                 <p>Duration :  {props.duration} days DailyLimit : {props.dailyLimit}</p>
@@ -38,8 +38,8 @@ const imgLink="https://letstalkscience.ca/sites/default/files/2020-12/solar_powe
                     <button className="purchase-btn">Purchase</button></div>
             </div>
             
-                <div className="userlist-struct-div2">
-                    <img className="userlist-struct-infraimg" src={imgLink} />
+                <div className="packagelist-struct-div2">
+                    <img className="packagelist-struct-infraimg" src={imgLink} />
                 </div>
             
 
