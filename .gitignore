@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 src/StaticInfo.js
+src/ENV.js
 
 # Editor directories and files
 .vscode/*
