@@ -17,6 +17,7 @@ export default function NavBar() {
 
   const reduxState = useSelector((state) => state);
   const auth = true || reduxState.userAuth.value;
+  
 
   return (
     <>

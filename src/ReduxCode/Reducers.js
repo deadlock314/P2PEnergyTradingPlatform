@@ -1,5 +1,5 @@
 import { createSlice ,current } from '@reduxjs/toolkit';
-import { getStorage } from '../HelperFun/browserStorageFuns';
+// import { getStorage } from '../HelperFun/browserStorageFuns';
 
 export const UserAuthSlice=createSlice({
     name:'authContext',
@@ -7,19 +7,20 @@ export const UserAuthSlice=createSlice({
         value:false,
         isMailVerfied:false,
         isWalletConnected:false,
-        userData:{}
+        userData:{},
+        locationData:{}
     },
     reducers:{
         changeUserAuth:(state,action) => {return {...current(state),value:action.payload}},
         setUserData:(state,action)=>{
             return { ...current(state),userData:action.payload}
         },
-        AddUserAddress:(state,action)=>{
-            return {...current(state)}
+        setUserLocation : (state,action) =>{
+            return {...current(state),locationData : action.payload}
         }
     }
 })
 
 
-export const {changeUserAuth,setUserData}=UserAuthSlice.actions;
+export const {changeUserAuth,setUserData , setUserLocation}=UserAuthSlice.actions;
 
