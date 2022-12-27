@@ -1,0 +1,23 @@
+.main-searchbar{
+    display: flex; 
+   align-items: center;
+  justify-content: center;
+   /* background-color: #fff; */
+   padding: 2% 2px;
+   border-radius: 0 0 15px 15px;
+
+}
+.search-input-div{
+    display: inline;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    padding: 8px 0 7px 15px;
+    background-color: #fff;
+}
+.searchbar-input {
+    all: unset;
+    display: inline;
+    width: 20vw;
+    background-color: #fff;
+    padding: 0 20px;
+}
