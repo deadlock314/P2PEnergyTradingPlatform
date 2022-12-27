@@ -14,7 +14,7 @@ const imgLink="https://letstalkscience.ca/sites/default/files/2020-12/solar_powe
             <div className="packagelist-struct-main-div" >
             <div  className="packagelist-struct-div1">
                 <div className="packagelist-div-name-img" >
-                    <img className="packagelist-struct-profileimg" src={imgLink} onClick={()=>redirect(`/public/user/${props.ownerId.email}`)}/>
+                    <img className="packagelist-struct-profileimg" src={imgLink} onClick={()=>redirect(`/publicview/user/${props.ownerId.email}`)}/>
                     <div  >
                       <p className="packagelist-struct-owner-name" > {props.ownerId.name}</p>
                      <p> {props.ownerId.email}</p>

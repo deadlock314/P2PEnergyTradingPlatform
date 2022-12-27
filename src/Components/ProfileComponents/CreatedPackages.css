@@ -1,0 +1,79 @@
+.createdpackage-main-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.createdpackage-struct-div1{
+    display: flex;
+    width: 75%;
+    padding: 1% 0 1% 7%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.createdpackage-struct-div2{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+}
+
+.public-createdpackage-struct-main-div{
+    background-color: rgb(255, 252, 252);
+    width: 80%;
+    height: 10vw;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 3%;
+    box-shadow: 0px 3px 3px 3px rgba(75, 70, 70, 0.321);
+    font-size: 1rem;
+    align-self: center;
+    border-radius: 15px;
+}
+
+
+.private-createdpackage-struct-main-div{
+    background-color: rgb(255, 252, 252);
+    width: 80%;
+    height: 8vw;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 2%;
+    box-shadow: 0px 3px 3px 3px rgba(75, 70, 70, 0.321);
+    font-size: 1rem;
+    align-self: center;
+    border-radius: 15px;
+}
+
+.createdpackage-data p{
+margin-top: 2%;
+}
+
+.createdpackage-struct-infraimg{
+    width: 65%;
+    height:85%;
+    margin-right: 5%;
+    border-radius: 5%;
+
+}
+.createdpackage-profile-purchase-btn{
+   
+        all: unset;
+        cursor: pointer;
+        text-align: center;
+        background-color: #0b9810;
+        border: 1px solid #0b9810;
+        border-radius: 0.5vw;
+        color:#fff;
+        font-size: 1.1rem;
+        width: 30%;
+        height: 2.5vw;
+        align-self: flex-end;
+}
+
+
+
+

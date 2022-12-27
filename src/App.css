@@ -24,10 +24,10 @@ padding: 0;
 
 
 
-form button:hover{
+form button:hover ,button:hover{
     color: black;
 }
-form button:active{
+form button:active , button:active{
     background-color: #09670d;
     transition: 10ms;
 }

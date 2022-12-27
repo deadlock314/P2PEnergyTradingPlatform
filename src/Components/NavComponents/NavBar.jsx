@@ -16,7 +16,7 @@ export default function NavBar() {
   let navicon = (navStatus) ? faXmark : faBars;
 
   const reduxState = useSelector((state) => state);
-  const auth = true || reduxState.userAuth.value;
+  const auth = reduxState.userAuth.value;
   
 
   return (

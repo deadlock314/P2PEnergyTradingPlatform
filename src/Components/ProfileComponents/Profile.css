@@ -1,0 +1,156 @@
+.profile-main-div {
+    display: flex;
+    margin: 2% 3%;
+    padding-bottom:2% ;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 3px 3px 3px rgba(75, 70, 70, 0.321);
+    flex-direction: column;
+}
+
+.profile-background-img {
+    width: 100%;
+    height: 17vw;
+    opacity: 0.9;
+}
+
+.profile-upper-div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7% 0 15%;
+}
+
+.profile-main-img {
+    width: 10Vw;
+    height: 10vw;
+    border-radius: 50%;
+    top: 18vw;
+    position: absolute;
+}
+
+.profile-contact-div {
+    top: 18vw;
+    left: 77vw;
+    position: absolute;
+}
+
+.profile-contact-div p {
+    font-size: 1.05rem;
+    color: black;
+    margin-top: 3%;
+
+}
+.profile-user-name{
+    font-size: 1.2rem;
+    position: absolute;
+    top: 20vw;
+    left: 31vw;
+    color: rgb(253, 253, 253);
+}
+
+.profile-second-div{
+    display: flex;
+    
+}
+.package-struct-main-div{
+    width: 75%;
+    height: 25vw;
+    margin: 0 2.5%;
+    box-shadow: 0px 3px 3px 3px rgba(75, 70, 70, 0.321);
+}
+
+.public-package-struct-main-div{
+    width: 75%;
+    margin: 0 2.5%;
+    box-shadow: 0px 3px 3px 3px rgba(75, 70, 70, 0.321);
+}
+
+.package-struct-title{
+    font-size: 1.1rem;
+    margin: 2% 5%;
+}
+.profile-nav-div{
+    width: 20%;
+    height: 25vw;
+    margin: 0 2.5%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 3px 3px 3px rgba(75, 70, 70, 0.321);
+}
+
+.public-profile-nav-div{
+    width: 20%;
+    height: 10vw;
+    margin: 0 2.5%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 3px 3px 3px rgba(75, 70, 70, 0.321);
+}
+
+.profile-nav-links{
+    all: unset;
+    color: rgb(21, 99, 162);
+    cursor: pointer;
+}
+.profile-left-nav-links{
+    font-size: 1rem;
+    display: flex;
+   justify-content: right;
+   margin: 0 5% 1% 5%;
+}
+.profile-address-div{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5% 0 4% 30%;
+    
+}
+.profile-address-div p{
+    font-size: 1rem;
+    margin-top: 0.5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .profile-btn{
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    background-color: #0b9810;
+    width: 175px;
+    height: 50px;
+    border: 1px solid #0b9810;
+    border-radius: 15px;
+    color:#fff;
+    font-size: 1.2rem;
+    margin: 20px 0; 
+} */

@@ -49,7 +49,7 @@
 .form-heading{
    font-size: 1.3rem;
    margin-bottom: 50px;
-   font-weight: bolder;
+   font-weight: 600;
 }
 
 .form button , .form2 button , #order{
