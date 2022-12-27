@@ -60,7 +60,7 @@ function CreatePackage() {
     const clickHandler = async (e) => {
         e.preventDefault();
         (isPackageValid) ?
-            postDataToAPI(`${RootUrl}/addpackage`, user)
+            postDataToAPI(`${RootUrl}/addpackage`, packageData)
                 .then(() => {
                     setPackageResMes("package added successfully");
                     redirect("/");

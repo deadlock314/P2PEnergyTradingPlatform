@@ -7,11 +7,12 @@ import LogIn from './Components/AuthComponent/LogIn';
 import SignUp from './Components/AuthComponent/SignUp';
 import AuthOtp from './Components/AuthComponent/AuthOtp';
 import "./App.css";
-import UserList from './Components/UserListComponents/UserList';
+import PackageList from './Components/PackageListComponents/PackageList';
 import PrivateProfile from './Components/ProfileComponents/PrivateProfile';
 import PublicProfile from './Components/ProfileComponents/PublicProfile';
 import CreatePackage from './Components/Forms/CreatePackage';
 import MainNotifications from './Components/Notifications/MainNotifications';
+import AdditionalInfo from './Components/Forms/AdditionalInfo';
 
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
      <Routes>
       <Route path="/" element={<HomePage/>} />
 
-      <Route path="/packagelist/:usertype" element={<UserList/>} />
+      <Route path="/packagelist/:usertype" element={<PackageList/>} />
 
       <Route path="/signup" element={<SignUp/>} />
       <Route path="/authotp" element={<AuthOtp/>} />
@@ -34,6 +35,8 @@ const App = () => {
       <Route path='/public/user/:userId' element={<PublicProfile/>} />
 
       <Route path="/createpackage" element={<CreatePackage/>} />
+      <Route path="/additionalinfo" element={<AdditionalInfo/>} />
+      
 
       <Route path="/notifications" element={<MainNotifications/>} />
 
