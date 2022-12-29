@@ -9,7 +9,7 @@ library.add(faBars, faXmark, faSearch, faUserCircle, faBell);
 
 function SearchBar() {
 
-  const locationData=useSelector((state)=>state.userAuth.locationData.response);
+  const locationData=useSelector((state)=>state.userAuth.locationData.response)||{principalSubdivision:"",city:""};
 
   return (
     <div className="main-searchbar">

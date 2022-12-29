@@ -18,7 +18,7 @@ const Footer = () => {
 
     const dispatch = useDispatch();
     
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
 
         async function getLocation(){
    

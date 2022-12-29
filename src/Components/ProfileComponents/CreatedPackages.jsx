@@ -5,7 +5,9 @@ import "./CreatedPackages.css";
 
 function CreatedPackages({ state, type }) {
 
-    const packageDataArr = Packages;
+    const packageDataArr = state;
+
+    console.log(state);
     const imgLink = "https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png";
     const size=(type=="public")?4:2;
 

@@ -11,15 +11,15 @@ function AdditionalInfo() {
     const redirect = useNavigate();
     const dispatch = useDispatch();
 
-    const locationData=useSelector((state)=>state.userAuth.locationData.response);
+    const userData=useSelector((state)=>state.userAuth)||{principalSubdivision:"",city:""};
 
 
 
-    const [additionalInfo, setAdditionalInfo] = useState({ country: locationData.countryName,
-                 state: locationData.principalSubdivision, city: locationData.city, pincode: 0 ,landmark:"",contact:"+91  "});
+    const [additionalInfo, setAdditionalInfo] = useState({ country: userData.locationData.response.countryName,
+                 state: userData.locationData.response.principalSubdivision, city: userData.locationData.response.city, pincode: 0 ,landmark:"",contact:"+91 "});
 
     const [AdditionalInfoResMes, setAdditionalInfoResMes] = useState('');
-    const [isAdditionalInfoValid, setIsAdditionalInfoValid] = useState(false);
+    const [isAdditionalInfoValid, setIsAdditionalInfoValid] = useState(true);
 
     const changeHandler = (e) => {
         const { name, value } = e.target;
@@ -63,12 +63,15 @@ function AdditionalInfo() {
 
 
     const clickHandler = async (e) => {
+
         e.preventDefault();
+
         (isAdditionalInfoValid) ?
-            postDataToAPI(`${RootUrl}/updateaddress/${"id"}`, additionalInfo)
+            postDataToAPI(`${RootUrl}/updateuseraddress`, additionalInfo)
                 .then(() => {
                     setAdditionalInfoResMes("Additional Info added successfully");
-                    redirect(`/private/user/${"id"}`);
+                    dispatch(setUserData(additionalInfo)); 
+                    redirect(`/private/user/${userData.userData.email}`);
                 }).catch((err) => {
                     console.log(err);
                     setAdditionalInfoResMes('something went wrong try again');

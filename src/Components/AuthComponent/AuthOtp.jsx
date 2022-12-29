@@ -1,25 +1,29 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import RootUrl from '../../Assets/RootURL';
 import { postDataToAPI } from '../../HelperFun/APImethods';
+import { setUserData } from '../../ReduxCode/Reducers';
 import './FormStyles.css';
 
 
 function AuthOtp() {
 
     const urlData = useLocation();
-    const redirect = useNavigate()
+    const redirect = useNavigate();
+    const dispatch = useDispatch();
+
     const [localOtp, setLocalOtp] = useState('');
     const [authMes, setAuthMes] = useState('');
     const [loading,setLoading] =useState(false);
 
     const changeHandler = (e) => setLocalOtp(e.target.value);
     
-
     const authResHandler = (res) => {
         if (res.emailverified ) {
             alert('user succesfully verified account');
-            redirect("/");
+            dispatch(setUserData({verifiedMail:true}))
+            redirect("/additionalinfo");
         }
         else if (!res.emailverified)
             setAuthMes('Enter correct otp');

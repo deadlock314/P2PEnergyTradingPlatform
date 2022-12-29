@@ -1,0 +1,108 @@
+.main-spinner{
+   padding: 20% 0 50% 0;
+}
+
+.spinner-flipper {
+	width: 12%;
+	height: 26%;
+	display: block;
+	z-index: 11111;
+	position: absolute;
+	top: 30%;
+	left: 45%;
+	margin: 100px auto;
+	-webkit-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.flip-animation {
+	box-shadow: -1px 2px 7px 3px #ffa500;
+	-webkit-animation: rotation3D_1 1.8s infinite ease-in-out;
+	animation: rotation3D_1 1.8s infinite ease-in-out;
+}
+
+.spinner-flipper-container {
+	height: 50%;
+	width: 80%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10000;
+	/* 	background: rgba(0, 0, 0, 0.6); */
+	background: transparent;
+	margin: 15vw 10vw;
+}
+
+.overlap-flip-animation {
+	margin-top: 99px;
+	-webkit-animation: rotation3D_2 1.8s infinite ease-in-out;
+	animation: rotation3D_2 1.8s infinite ease-in-out;
+}
+
+.spinner-flip-img {
+	width: 70%;
+	height: 80%;
+	transform-origin: 41% 54%;
+	vertical-align: middle;
+	position: relative;
+	top: 15%;
+	left: 16%;
+}
+
+img.rotate-180-y {
+	left: 29%;
+	transform: rotateY(180deg);
+}
+
+@-webkit-keyframes rotation3D_1 {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(-179.9deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(-359.1deg) }
+}
+ 
+@keyframes rotation3D_1 {
+  0% { 
+	transform: perspective(120px) rotateY(0deg);
+	-webkit-transform: perspective(120px) rotateY(0deg);
+	background: white;
+  } 50% { 
+    transform: perspective(120px)rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateY(-179.9deg); 
+    background: white;
+  } 100% { 
+    transform: perspective(120px) rotateY(-359.1deg);
+    -webkit-transform: perspective(120px) rotateY(-359.1deg);
+    background: white;
+}
+}
+
+@-webkit-keyframes rotation3D_2 {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(-179.9deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(-359.1deg) }
+}
+ 
+@keyframes rotation3D_2 {
+  0% { 
+	transform: perspective(120px) rotateY(0deg);
+	-webkit-transform: perspective(120px) rotateY(0deg);
+	background: white;
+	opacity: 0;
+  } 50% { 
+    transform: perspective(120px) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateY(-179.9deg); 
+    background: white;
+    opacity:1;
+  } 100% { 
+    transform: perspective(120px) rotateY(-359.1deg);
+    -webkit-transform: perspective(120px) rotateY(-359.1deg);
+    background: white;
+    opacity:0;
+}
+}
+
+.show-loader .spinner-flipper-overlay, .show-loader .spinner-flipper-container {
+  display: block;
+}

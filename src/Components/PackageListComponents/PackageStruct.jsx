@@ -6,6 +6,10 @@ console.log(props);
 
 const redirect = useNavigate();
 
+const PurchaseHandler = () => {
+    
+}
+
 const imgLink="https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png";
 
     return (
@@ -35,7 +39,7 @@ const imgLink="https://letstalkscience.ca/sites/default/files/2020-12/solar_powe
                 <p>Price : {props.price} Rs</p>
                 </div>
               
-                    <button className="purchase-btn">Purchase</button></div>
+                    <button className="purchase-btn" onClick={PurchaseHandler} >Purchase</button></div>
             </div>
             
                 <div className="packagelist-struct-div2">

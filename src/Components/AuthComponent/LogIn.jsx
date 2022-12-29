@@ -5,18 +5,16 @@ import './FormStyles.css';
 import {changeUserAuth,setUserData} from '../../ReduxCode/Reducers';
 import RootUrl from '../../Assets/RootURL';
 import { getDataFromAPI, postDataToAPI } from '../../HelperFun/APImethods';
+import Spinner from '../unitComponent/Spinner';
 
 
 const LogIn = () => {
 
     const redirect = useNavigate();
+    const dispatch=useDispatch();
+
     const [loading, setLoading] = useState(false);
     const [loggedInMes, setLoggedInMes] = useState('');
-
-    const reduxState=useSelector((state)=>state);
-    console.log(reduxState);
-
-    const dispatch=useDispatch();
 
     let [user, setUser] = useState({ email: '', password: '' });
     const changeHandler = e => {
@@ -27,12 +25,12 @@ const LogIn = () => {
     const loginResHandler = (res) => {
 
         if (res.loggedIn) {
+            // document.cookie=`jwt=${res.jwt}; Path=/; maxAge:3600*1000;`;
             alert('user succesfully Logged-In')
             setLoading(true);
             setUser({ email: '', password: '' })
-            getDataFromAPI(`${RootUrl}/user/${user.email}`).then((userdata) => {
-                console.log(userdata);
-                if (userdata.data) {
+            getDataFromAPI(`${RootUrl}/private/getuserdata`).then((userdata) => {
+                if (!userdata.isError) {
                     dispatch(changeUserAuth(true))
                     dispatch(setUserData(userdata.data)) 
                     redirect(`/private/user/${userdata.data.email}`);
@@ -82,7 +80,7 @@ const LogIn = () => {
         <>
             {
                 (loading) ?
-                    <></> :
+                    <Spinner/> :
                     <div className="img-form-main">
 
                         <img className="img-form"

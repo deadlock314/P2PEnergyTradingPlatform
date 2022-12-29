@@ -5,18 +5,20 @@ import Notifications from './NotificationCard';
 
 function MainNotifications() {
 
-    const NotificationArr = [{
-        _id: 1, imgLink: "https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png",
-        title: "New purchase Request", subtitle: "you have a new purchase request please check your mail for more details", status: false
-    },
-    {
-        _id: 2, imgLink: "https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png",
-        title: "New purchase Request", subtitle: "you have a new purchase request please check your mail for more details", status: false
-    },
-    {
-        _id: 3, imgLink: "https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png",
-        title: "New purchase Request", subtitle: "you have a new purchase request please check your mail for more details", status: false
-    }];
+    const NotificationArr = [
+    //     {
+    //     _id: 1, imgLink: "https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png",
+    //     title: "New purchase Request", subtitle: "you have a new purchase request please check your mail for more details", status: false
+    // },
+    // {
+    //     _id: 2, imgLink: "https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png",
+    //     title: "New purchase Request", subtitle: "you have a new purchase request please check your mail for more details", status: false
+    // },
+    // {
+    //     _id: 3, imgLink: "https://letstalkscience.ca/sites/default/files/2020-12/solar_power_illustration.png",
+    //     title: "New purchase Request", subtitle: "you have a new purchase request please check your mail for more details", status: false
+    // }
+];
 
 
 

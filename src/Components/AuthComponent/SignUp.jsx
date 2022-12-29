@@ -11,7 +11,7 @@ import {changeUserAuth,setUserData} from '../../ReduxCode/Reducers';
 function SignUp() {
     const redirect = useNavigate();
     const [user, setUser] = useState({ name: '', email: '', password: '' });
-    const [signedUpMes, setsignedUpMes] = useState('');
+    const [signedUpMes, setSignedUpMes] = useState('');
     
     const changeHandler = (e) => {
         const { name, value } = e.target;
@@ -24,32 +24,31 @@ function SignUp() {
     const signupResHandler = (res) => {
        
         if (res.signedUp){
-            setsignedUpMes('User succesfully signed up');
+            setSignedUpMes('User succesfully signed up');
             alert("User succesfully signed up");
-            getDataFromAPI(`${RootUrl}/user/${user.email}`).then((userdata) => {
-                console.log(userdata);
-                if (userdata.data) {
+            getDataFromAPI(`${RootUrl}/private/getuserdata`).then((userdata) => {
+                if (!userdata.isError) {
                     dispatch(changeUserAuth(true))
                     dispatch(setUserData(userdata.data)) 
                     redirect(`/private/user/${userdata.data.email}`);
                 }
                 else{
-                    setsignedUpMes('Something went wrong try again');
+                    setSignedUpMes('Something went wrong try again');
                     
                 }
             })
         }
         else
-            setsignedUpMes('something went wrong try again');
+            setSignedUpMes('something went wrong try again');
 
         // if (res.isDuplicateUser)
-        //     setsignedUpMes('User already exist in database');
+        //     setSignedUpMes('User already exist in database');
         // else if (res.isEmailSent)
         //     redirect('/signup/alphakey', { state: { ...user } })
         // else if (!res.isEmailSent)
-        //     setsignedUpMes('please enter correct email id')
+        //     setSignedUpMes('please enter correct email id')
         // else
-        //     setsignedUpMes('something went wrong try again');
+        //     setSignedUpMes('something went wrong try again');
     }
 
 
@@ -58,7 +57,7 @@ function SignUp() {
         postDataToAPI(`${RootUrl}/signup`, user)
         .then((res) => signupResHandler(res)).catch ((err)=> {
            console.log(err);
-           setsignedUpMes('something went wrong try again');
+           setSignedUpMes('something went wrong try again');
        });
     }
 

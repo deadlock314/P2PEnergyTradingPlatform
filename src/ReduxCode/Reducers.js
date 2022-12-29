@@ -13,14 +13,17 @@ export const UserAuthSlice=createSlice({
     reducers:{
         changeUserAuth:(state,action) => {return {...current(state),value:action.payload}},
         setUserData:(state,action)=>{
-            return { ...current(state),userData:action.payload}
+            return { ...current(state), userData:{ ...state.userData, ...action.payload}}
         },
         setUserLocation : (state,action) =>{
             return {...current(state),locationData : action.payload}
-        }
+        },deleteUserData:(state,action)=>{
+            return { ...current(state), userData:action.payload}
+        },
+
     }
 })
 
 
-export const {changeUserAuth,setUserData , setUserLocation}=UserAuthSlice.actions;
+export const {changeUserAuth,setUserData , deleteUserData, setUserLocation}=UserAuthSlice.actions;
 
